@@ -6,5 +6,5 @@ test('Verify Page Title', async ({ page }) =>
     page.goto("https://testautomationpractice.blogspot.com/");
     const pageTitle = await page.title();
     console.log("Page Title", pageTitle);
-    expect(page).toHaveTitle('Automation Testing Practice');
+    await expect(page).toHaveTitle('Automation Testing Practice');
 })
