@@ -37,10 +37,8 @@ test("DropDown Handling", async ({ page }) => {
         }
     }
 
-
-
     await page.waitForTimeout(2000);
-
+    await page.close();
 
 
 });

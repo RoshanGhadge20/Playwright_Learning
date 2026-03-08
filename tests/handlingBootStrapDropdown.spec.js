@@ -9,10 +9,8 @@ test("Handling Bootstrap dropdown", async ({ page }) => {
     // Fetching the dropdown option and iterating throgh it
     const dropDownOption = await page.$$('select#animals');
     for (const option of dropDownOption) {
-        let text = option.textContent();
+        let text = await option.textContent();
         console.log("Text Option :- ", text);
     }
-
-
 
 });

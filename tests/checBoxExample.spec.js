@@ -23,4 +23,5 @@ test("Checkbox handling", async ({ page }) => {
         await page.locator(uncheckElement).uncheck();
     }
     await page.waitForTimeout(4000);
+    await page.close();
 });

@@ -7,12 +7,12 @@ test("Working with input box", async ({ page }) => {
     const inputBox = await page.locator('input#name');
 
     // Approach 1 > directly passing value 
-    inputBox.fill('Roshan Ghadge');
+    await inputBox.fill('Roshan Ghadge');
 
     // Approach 2 > with locators 
     await page.locator('input#name').fill('Roshan');
 
-    // Assertions 
+    // Assertions to verify few conditions on page
     await page.locator('input#email').isVisible();
     await page.locator('input#email').isEnabled();
     await page.locator('input#email').isEditable();
@@ -20,8 +20,8 @@ test("Working with input box", async ({ page }) => {
 });
 
 test("Working with radio buttons", async ({ page }) => {
-    await page.goto('https://testautomationpractice.blogspot.com/');
-    const maleRadioButton = page.locator('#male');
+    await page.goto('https://testautomationpractice.blogspot.com/', { waitUntil: 'load' });
+    const maleRadioButton = await page.locator('#male');
 
     // Performing the check operation
     await maleRadioButton.check();

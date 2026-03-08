@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test'
 test('Learning Locator', async ({ page }) => {
 
     // Navigating to the WebPage
-    await page.goto('https://testautomationpractice.blogspot.com/');
+    await page.goto('https://testautomationpractice.blogspot.com/', { waitUntil: 'load' });
 
     // Approach 1 : Storing webelement & performing the action on it 
     const nameField = await page.locator('input#name');
@@ -38,5 +38,6 @@ test('Learning Locating Multiple Elements', async ({ page }) => {
         console.log("Options of dropdown :-", drp_option);
     }
 
+    await page.waitForTimeout(4000);
     page.close();
 })

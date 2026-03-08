@@ -13,4 +13,6 @@ test("Handling autoSuggestion and HiddenElements of Dropdown", async ({ page }) 
             await option.click();
         }
     }
+
+    await page.close();
 });

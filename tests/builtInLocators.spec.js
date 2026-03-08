@@ -4,7 +4,7 @@ test('Built In Locators', async ({ page }) => {
 
     // All Built In locators into playwrights 
 
-    await page.goto('https://testautomationpractice.blogspot.com/');
+    await page.goto('https://testautomationpractice.blogspot.com/', { waitUntil: 'load' });
 
     // by using alt text()
     const element = await page.getByAltText('locator');
@@ -34,5 +34,5 @@ test('Built In Locators', async ({ page }) => {
     const element6 = await page.getByTestId('locator');
     await expect(element).toBeVisible();
 
-
+    await page.close();
 })
