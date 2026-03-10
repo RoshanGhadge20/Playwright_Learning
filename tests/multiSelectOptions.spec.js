@@ -19,4 +19,7 @@ test("MultiSelect Dropdown Options", async ({ page }) => {
     // Presence of Option in dropdown
     const content = await page.locator("select#colors").textContent();
     await expect(content.includes("Black")).toBeTruthy();
+
+    await page.waitForTimeout(4000);
+    await page.close();
 });

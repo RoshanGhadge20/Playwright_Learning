@@ -17,7 +17,7 @@ test('Learning Locator', async ({ page }) => {
 
     // Approach 3 : Fill up value into element with this 
     const addressField = await page.fill('textarea#textarea', 'Nerul Navi Mumbai');
-    page.close();
+    await page.close();
 
 })
 
@@ -39,5 +39,5 @@ test('Learning Locating Multiple Elements', async ({ page }) => {
     }
 
     await page.waitForTimeout(4000);
-    page.close();
+    await page.close();
 })

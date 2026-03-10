@@ -17,6 +17,8 @@ test("Working with input box", async ({ page }) => {
     await page.locator('input#email').isEnabled();
     await page.locator('input#email').isEditable();
 
+    await page.waitForTimeout(4000);
+    await page.close();
 });
 
 test("Working with radio buttons", async ({ page }) => {
@@ -27,4 +29,7 @@ test("Working with radio buttons", async ({ page }) => {
     await maleRadioButton.check();
     // Asserting its checked or not 
     await expect(maleRadioButton.isChecked()).toBeTruthy();
+
+    await page.waitForTimeout(4000);
+    await page.close();
 })
