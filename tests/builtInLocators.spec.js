@@ -34,5 +34,6 @@ test('Built In Locators', async ({ page }) => {
     const element6 = await page.getByTestId('locator');
     await expect(element).toBeVisible();
 
+    await page.waitForTimeout(4000);
     await page.close();
 })

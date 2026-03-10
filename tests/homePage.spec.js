@@ -6,4 +6,7 @@ test('Verify Page Title', async ({ page }) => {
     const pageTitle = await page.title();
     console.log("Page Title", pageTitle);
     await expect(page).toHaveTitle('Automation Testing Practice');
+
+    await page.waitForTimeout(4000);
+    await page.close();
 })

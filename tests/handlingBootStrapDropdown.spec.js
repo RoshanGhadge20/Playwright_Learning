@@ -13,4 +13,5 @@ test("Handling Bootstrap dropdown", async ({ page }) => {
         console.log("Text Option :- ", text);
     }
 
+    await page.close();
 });
